@@ -1,88 +1,37 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores Amarillas</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f8ff;
-            font-family: Arial, sans-serif;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: #FFD700;
-            text-align: center;
-            animation: fadeInTitle 2s ease-in-out;
-        }
-
-        @keyframes fadeInTitle {
-            0% {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .flower-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .flower {
-            width: 100px;
-            height: 100px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Golden_wattle_flower02.jpg/1280px-Golden_wattle_flower02.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 50%;
-            animation: growAndRotate 3s ease-in-out infinite;
-        }
-
-        @keyframes growAndRotate {
-            0% {
-                transform: scale(0.8) rotate(0deg);
-            }
-            50% {
-                transform: scale(1) rotate(180deg);
-            }
-            100% {
-                transform: scale(0.8) rotate(360deg);
-            }
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .flower {
-                width: 80px;
-                height: 80px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>FLORES</title>
 </head>
 <body>
-    <h1>Flores Amarillas</h1>
-    <div class="flower-container">
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
+    <div class="greetings">
+
+        <span>H</span>
+        <span>O</span>
+        <span>L</span>
+        <span>A</span>
+    </div>
+    <div class="greetings">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="description">
+        <span>Tengo un regalo especial para ti!!</span>
+    </div>
+    <div class="button">
+        <button>
+            <a href="FLORES.html">Haga Clic</a>
+        </button>
+        
     </div>
 </body>
 </html>
