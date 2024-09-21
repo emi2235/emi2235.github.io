@@ -6,10 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <title>FLORES</title>
+    <style>
+      .te-amo {
+          position: absolute;
+          top: 10%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 64px;
+          font-weight: 700;
+          font-family: 'Dancing Script', cursive;
+          color: yellow;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+          z-index: 1000;
+      }
+
+      .te-amo span {
+          opacity: 0;
+          transition: opacity 0.3s ease;
+      }
+
+      @keyframes fadeOut {
+          from { opacity: 1; }
+          to { opacity: 0; }
+      }
+    </style>
 </head>
 
 <body class="container">
+    <div class="te-amo">TE AMO</div>
     <div class="night"></div>
     <div class="flowers">
       <div class="flower flower--1">
@@ -308,5 +334,36 @@
       </div>
     </div>
     <script src="main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+          const teAmo = document.querySelector('.te-amo');
+          const text = "Te Amo mi amor";
+          
+          function setupText() {
+              teAmo.innerHTML = text.split('').map(char => `<span>${char}</span>`).join('');
+          }
+
+          function animateText() {
+              const spans = teAmo.querySelectorAll('span');
+              spans.forEach((span, index) => {
+                  setTimeout(() => {
+                      span.style.opacity = '1';
+                  }, index * 300);
+              });
+
+              setTimeout(() => {
+                  teAmo.style.animation = 'fadeOut 1s forwards';
+                  setTimeout(() => {
+                      teAmo.style.animation = '';
+                      spans.forEach(span => span.style.opacity = '0');
+                      setTimeout(animateText, 500);
+                  }, 1000);
+              }, (text.length * 300) + 1000);
+          }
+
+          setupText();
+          animateText();
+      });
+    </script>
   </body>
 </html>
